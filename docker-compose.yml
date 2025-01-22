@@ -1,0 +1,9 @@
+services:
+  db-access:
+    build:
+      context: ./db-access
+      dockerfile: Dockerfile
+    image: data-puller:latest
+    container_name: data-puller-container
+    volumes:
+     - ./db-access:/app
