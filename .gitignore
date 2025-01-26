@@ -4,3 +4,4 @@ logs/
 config.json
 out.csv
 out_metadata.csv
+metadata/

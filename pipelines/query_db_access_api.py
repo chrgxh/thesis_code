@@ -37,7 +37,7 @@ def query_db_access_api(query_endpoint:str,query_payload:str)->pd.DataFrame:
 
 if __name__ == '__main__':
     query_payload = {
-    "query": "SELECT * FROM device_metadata LIMIT 5;"  # Replace 'your_table' with a real table name
+    "query": "SELECT * FROM device_metadata LIMIT 5;" 
     }
     df=query_db_access_api(QUERY_ENDPOINT,query_payload)
     print(df.head())

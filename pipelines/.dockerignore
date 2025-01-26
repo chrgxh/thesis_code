@@ -9,4 +9,4 @@ __pycache__/
 .gitignore
 Dockerfile
 docker-compose.yml
-out.csv
+metadata/
