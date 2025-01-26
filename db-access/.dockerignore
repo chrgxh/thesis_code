@@ -1,12 +1,21 @@
+# Ignore everything except the essential files
+*
+
+# Allow only these specific files
+!db_access.py
+!requirements.txt
+
+# Ignore hidden/system files
+.dockerignore
+Dockerfile
+*.swp
+*.tmp
+
+# Ignore version control folders
+.git
+.gitignore
+
+# Ignore Python cache and compiled files
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-*.swp
-*.swo
-.env
-.git
-.gitignore
-Dockerfile
-docker-compose.yml
-out.csv

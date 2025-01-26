@@ -15,11 +15,10 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy your application code into the container
-COPY . .
+COPY db_access.py db_access.py
 
-# # Set environment variables for PostgreSQL configuration
-# # (Optional: Use environment variables instead of the JSON config)
-# ENV CONFIG_PATH=/app/config.json
+# Expose the Flask port
+EXPOSE 5000
 
 # Run the script
-CMD ["python", "/app/db_access.py"]
+CMD ["python", "db_access.py"]
