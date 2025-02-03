@@ -18,6 +18,8 @@ def index():
 @app.route('/query', methods=['POST'])
 def run_query():
     query = request.json.get('query')  # Get the query from the request
+    conn=None
+    cursor=None
     try:
         # Connect to the database
         conn = psycopg2.connect(
@@ -41,6 +43,11 @@ def run_query():
         return jsonify({'success': True, 'data': result})  # Return JSON response
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
+    finally:
+        if cursor:
+            cursor.close()
+        if conn is not None:
+            conn.close()
 
 if __name__ == '__main__':
     # Read application host and port from environment variables

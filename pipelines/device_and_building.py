@@ -60,7 +60,10 @@ class Building:
 
     def __repr__(self):
         return self.__str__()
-    
+
+    def get_device_list_as_string(self):
+        return ",".join([f"'{device.device_id}'" for device in self.device_list])
+
     def generate_building_yaml(self, building_no: int, file_path: str):
         # Map devices to elec_meters and appliances
         elec_meters = CommentedMap()
