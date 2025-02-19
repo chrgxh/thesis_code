@@ -1,6 +1,5 @@
 from typing import List
 import re
-from collections import OrderedDict
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
 
@@ -25,18 +24,18 @@ class Device:
         self.device_type = device_type
         self.clamp = clamp
         self.iam = iam
-
-    def get_device_type(self):
-        return re.sub(r'[\d-]', '', self.device_type)
     
     def is_meter(self):
-        return 'phase' in self.device_type_text.lower()
+        return 'phase em' in self.device_type_text.lower()
 
     def get_meter_device(self):
         if self.is_meter():
             return self.clamp
         else:
             return self.iam
+    
+    def __repr__(self):
+        return f"Device(device_id={self.device_id}, device_type={self.device_type}, home_id={self.home_id})"
 
     @classmethod
     def from_dict(cls, device_dict: dict):
@@ -74,8 +73,8 @@ class Building:
             if not device.is_meter():
                 # Add to appliances
                 appliances.append({
-                    "original_name": device.get_device_type().lower(),
-                    "type": device.get_device_type().lower(),
+                    "original_name": device.device_name.capitalize(),
+                    "type": device.device_name,
                     "instance": 1,  # Default instance for simplicity
                     "meters": [index],
                 })

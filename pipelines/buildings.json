@@ -1,0 +1,1825 @@
+[
+  {
+    "home_id": 36,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-F1C2FB",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "28-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxem3-ECFABCC7F0FF",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "28-05-21",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 39,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-8FF852",
+        "device_type": "Shelly Plug",
+        "type": "A/C Living Room",
+        "from": "31-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "shellyplug-s-2295BC",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "09-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-2842FB",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "09-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxplug-2845C2",
+        "device_type": "Shelly Plug",
+        "type": "WMDr",
+        "from": "09-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washer dryer"
+      },
+      {
+        "device_meter_id": "domxem3-ECFABCC7F071",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "03-06-21",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 41,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-3494546ECDA9",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "28-02-24",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 69,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem-C7FBD3",
+        "device_type": "1-phase EM",
+        "type": "AC",
+        "from": "01-02-24",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 81,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-900030",
+        "device_type": "Shelly Plug",
+        "type": "A/C 3",
+        "from": "21-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-90002F",
+        "device_type": "Shelly Plug",
+        "type": "A/C Living Room",
+        "from": "21-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-8FF5B3",
+        "device_type": "Shelly Plug",
+        "type": "A/C Dining Room",
+        "from": "21-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-C19B0E",
+        "device_type": "Shelly Plug",
+        "type": "Dishwasher-(S)",
+        "from": "16-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "shellyplug-s-F143AC",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-2846B6",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem-C7FCB5",
+        "device_type": "1-phase EM",
+        "type": "meter",
+        "from": "11-03-21",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 95,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-F14B29",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-284897",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-28471E",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem-C7F4EB",
+        "device_type": "1-phase EM",
+        "type": "meter",
+        "from": "19-03-21",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 114,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-FCF5C49641CF",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "09-06-21",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 120,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-3494547195AF",
+        "device_type": "3-phase EM",
+        "type": "HP",
+        "from": "31-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 123,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-C82B9611633D",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "29-06-21",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 126,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-7C87CEBA3F5C",
+        "device_type": "Shelly Plug S",
+        "type": "PC",
+        "from": "17-01-24",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "computer"
+      },
+      {
+        "device_meter_id": "domxplug-8F899E",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "24-11-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-8FF3B4",
+        "device_type": "Shelly Plug",
+        "type": "Dryer(S)",
+        "from": "10-11-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "tumble dryer"
+      },
+      {
+        "device_meter_id": "shellyplug-s-D9DEBE",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "16-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-28467C",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "15-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-68C63AFB1F30",
+        "device_type": "3-phase EM w/ Relay",
+        "type": "meter-relay-P2",
+        "from": "13-07-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 127,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-E0AF97",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-2840CB",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxem3-68C63AFB3BF6",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "15-07-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 130,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-8F8991",
+        "device_type": "Shelly Plug",
+        "type": "A/C Bedroom2",
+        "from": "31-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-8FF464",
+        "device_type": "Shelly Plug",
+        "type": "A/C Living Room",
+        "from": "31-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "shellyplug-s-224371",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-284409",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-283E8A",
+        "device_type": "Shelly Plug",
+        "type": "A/C Bedroom1",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem3-C82B9611688B",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "28-07-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 136,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-F13DA4",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-284632",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-2841C9",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem3-C82B96116913",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "23-07-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 138,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-C82B96116354",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "19-05-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 145,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-2BA3BE",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "14-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-C14B8F",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "14-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "shellyplug-s-C119AC",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "14-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxem3-C82B9610EA08",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "12-05-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 194,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-D9AEB4",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-28486E",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-E0AFBA",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-349454717054",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "28-07-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 195,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-D9B4B9",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-284336",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-2844D0",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "21-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-485519C91061",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "28-07-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 196,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-2219F9",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "04-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxem3-3494547192C2",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "15-11-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 197,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-283B9D",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "03-01-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "shellyplug-s-ED979C",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-283D60",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem3-485519C9780F",
+        "device_type": "3-phase EM w/ Relay",
+        "type": "meter-boiler-P2",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 200,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-C0FE7E",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "14-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-286F34",
+        "device_type": "Shelly Plug",
+        "type": "DM",
+        "from": "14-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "unknown"
+      },
+      {
+        "device_meter_id": "domxplug-2CA084",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "14-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-485519C979E2",
+        "device_type": "3-phase EM w/ Relay",
+        "type": "meter-boiler-P2",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 250,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-2845DA",
+        "device_type": "Shelly Plug",
+        "type": "WM/Dr",
+        "from": "04-01-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washer dryer"
+      },
+      {
+        "device_meter_id": "shellyplug-s-ECBF52",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "04-01-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxem3-C8C9A3705CD1",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 252,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-3494547194C7",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      },
+      {
+        "device_meter_id": "shellyplug-s-ECF394",
+        "device_type": "Shelly Plug S",
+        "type": "PC",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "computer"
+      },
+      {
+        "device_meter_id": "domxplug-284456",
+        "device_type": "Shelly Plug",
+        "type": "A/C Living Room",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-2847A0",
+        "device_type": "Shelly Plug",
+        "type": "A/C Office",
+        "from": "07-12-22",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      }
+    ]
+  },
+  {
+    "home_id": 254,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-4A8D4F",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "05-01-24",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      }
+    ]
+  },
+  {
+    "home_id": 262,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-D9B0E6",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-C152C9",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-C16646",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-485519C9BBAA",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 263,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-244CAB435699",
+        "device_type": "3-phase EM",
+        "type": "meter-EV",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      },
+      {
+        "device_meter_id": "shellyplug-s-F1BA46",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-C19758",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxplug-2CA74F",
+        "device_type": "Shelly Plug",
+        "type": "WM/Dr",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washer dryer"
+      },
+      {
+        "device_meter_id": "domxem3-3494546EC9F0",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 264,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-F1B8D8",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "28-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-2CC4F6",
+        "device_type": "Shelly Plug",
+        "type": "AC",
+        "from": "28-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-C15A17",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "28-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-3494546ED3B7",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "28-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 265,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-6EDFFE",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-286C52",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-C1C45B",
+        "device_type": "Shelly Plug",
+        "type": "A/C",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem3-C8C9A3705052",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 266,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-2C9D91",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "30-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxplug-286A3B",
+        "device_type": "Shelly Plug",
+        "type": "Freezer",
+        "from": "30-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "freezer"
+      },
+      {
+        "device_meter_id": "domxplug-2869F0",
+        "device_type": "Shelly Plug",
+        "type": "TV_1",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-C1A105",
+        "device_type": "Shelly Plug",
+        "type": "Humidifier",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "unknown"
+      },
+      {
+        "device_meter_id": "domxplug-C1CEA8",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-C1CA02",
+        "device_type": "Shelly Plug",
+        "type": "Dryer",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "tumble dryer"
+      },
+      {
+        "device_meter_id": "domxplug-2CC63A",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxplug-56057A",
+        "device_type": "Shelly Plug",
+        "type": "TV_2",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxem3-3494546ED449",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "11-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 270,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxplug-8FFAF9",
+        "device_type": "Shelly Plug",
+        "type": "A/C",
+        "from": "14-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-8FF1F4",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "14-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxplug-9002A5",
+        "device_type": "Shelly Plug",
+        "type": "WM-Hoover",
+        "from": "14-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      }
+    ]
+  },
+  {
+    "home_id": 272,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-C1AE2F",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-286A3F",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "30-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxem3-485519C9C37E",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "29-03-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 276,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-6F608E",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "13-01-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-C1514C",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "13-01-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxem3-C8C9A370578A",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "13-01-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 279,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-349454718E54",
+        "device_type": "3-phase EM",
+        "type": "meter-EV",
+        "from": "09-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      },
+      {
+        "device_meter_id": "shellyplug-s-7C87CEBA3E4C",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "09-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-2C907E",
+        "device_type": "Shelly Plug",
+        "type": "A/C",
+        "from": "09-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-2CAB64",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "09-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxem3-244CAB436349",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "09-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 280,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-C8C9A37059DE",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      },
+      {
+        "device_meter_id": "shellyplug-s-4022D88E369D",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-C16066",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      }
+    ]
+  },
+  {
+    "home_id": 281,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-7C87CEBA9A48",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-286E36",
+        "device_type": "Shelly Plug",
+        "type": "A/C",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-286BE0",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-349454719423",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "20-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 282,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-7C87CEB520B4",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "04-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "shellyplug-s-7C87CEB50BAE",
+        "device_type": "Shelly Plug S",
+        "type": "Purifier",
+        "from": "04-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "unknown"
+      },
+      {
+        "device_meter_id": "domxplug-C1CF07",
+        "device_type": "Shelly Plug",
+        "type": "A/C",
+        "from": "04-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem3-349454717314",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "04-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 283,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-3494546ED8F9",
+        "device_type": "3-phase EM",
+        "type": "meter-EV",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 284,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-C8C9A3A5CA8F",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "13-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-C19AEE",
+        "device_type": "Shelly Plug",
+        "type": "DW",
+        "from": "13-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "dishwasher"
+      },
+      {
+        "device_meter_id": "domxem3-244CAB436229",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "13-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 285,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-244CAB4356D1",
+        "device_type": "3-phase EM",
+        "type": "meter-EV",
+        "from": "13-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 289,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-7C87CEB484E0",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-2C35B5",
+        "device_type": "Shelly Plug",
+        "type": "A/C 2",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxplug-55F7BC",
+        "device_type": "Shelly Plug",
+        "type": "A/C 1",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "air conditioner"
+      },
+      {
+        "device_meter_id": "domxem3-244CAB4353DB",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "26-09-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 292,
+    "last_updated": "",
+    "active_in_pipeline": true,
+    "devices": [
+      {
+        "device_meter_id": "shellyplug-s-7C87CEB4A329",
+        "device_type": "Shelly Plug S",
+        "type": "TV",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "television"
+      },
+      {
+        "device_meter_id": "domxplug-8F8980",
+        "device_type": "Shelly Plug",
+        "type": "Dryer",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "tumble dryer"
+      },
+      {
+        "device_meter_id": "domxplug-90004F",
+        "device_type": "Shelly Plug",
+        "type": "WM",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": false,
+        "active_in_pipeline": true,
+        "appliance_name": "washing machine"
+      },
+      {
+        "device_meter_id": "domxem3-C8C9A3705C4F",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "17-07-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 293,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-3494546ED493",
+        "device_type": "3-phase EM",
+        "type": "meter-HP",
+        "from": "30-10-23",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  },
+  {
+    "home_id": 303,
+    "last_updated": "",
+    "active_in_pipeline": false,
+    "devices": [
+      {
+        "device_meter_id": "domxem3-244CAB43661F",
+        "device_type": "3-phase EM",
+        "type": "meter",
+        "from": "01-02-24",
+        "to": "",
+        "time_interval": "",
+        "is_meter": true,
+        "active_in_pipeline": true,
+        "appliance_name": ""
+      }
+    ]
+  }
+]

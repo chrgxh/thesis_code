@@ -1,9 +1,14 @@
-from query_db_access_api import query_db_access_api,QUERY_ENDPOINT 
+from query_db_access_api import query_db_access_api
 from device_and_building import Device, Building
 from typing import List
 import os
+from buildings_json_handler import load_buildings_from_json
+from common import *
 
 def extract_house_list()->List[Building]:
+    """
+    Gets a list of buildings by querying the database.
+    """
     query = """
     SELECT home_id, 
         device_id, 
@@ -17,7 +22,7 @@ def extract_house_list()->List[Building]:
     "query": query
     }
 
-    device_list=query_db_access_api(QUERY_ENDPOINT,query_payload).to_dict(orient="records")
+    device_list=query_db_access_api(query_payload).to_dict(orient="records")
     #device_list is ordered by home_id and device_id
     
     building_list:List[Building]=[]
@@ -35,11 +40,10 @@ def get_device_metadata():
     """
     Generate YAML metadata for each building in the list and save to files.
     """
-    building_list = extract_house_list()
-    metadata_dir = r'D:\thesis_code\my_code\pipelines\metadata'
+    building_list = load_buildings_from_json(JSON_PATH)
 
     for index, building in enumerate(building_list, start=1):
-        output_file = os.path.join(metadata_dir, f'building{index}.yaml')
+        output_file = os.path.join(METADATA_DIR, f'building{index}.yaml')
         building.generate_building_yaml(index, output_file)
 
 if __name__ == '__main__':

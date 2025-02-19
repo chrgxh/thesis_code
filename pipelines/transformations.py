@@ -7,10 +7,10 @@ def remove_milliseconds(df:pd.DataFrame,timestamp_col="timestamp")->pd.DataFrame
 
 def aggregate_power(df:pd.DataFrame)->pd.DataFrame:
     #Average power for same device_id, timestamp, and phase
-    df_avg = df.groupby(['device_id', 'timestamp', 'phase'], as_index=False).agg({'power_data': 'mean'})
+    df_avg = df.groupby(['device_id', 'timestamp', 'phase'], as_index=False).agg({'power_data': 'mean'}).round(2)
 
     #Sum power for same device_id and timestamp across different phases
-    df_final = df_avg.groupby(['device_id', 'timestamp'], as_index=False).agg({'power_data': 'sum'})
+    df_final = df_avg.groupby(['device_id', 'timestamp'], as_index=False).agg({'power_data': 'sum'}).round(2)
     return df_final
 
 def map_device_id(df:pd.DataFrame, mapping_dict:dict)->pd.DataFrame:
