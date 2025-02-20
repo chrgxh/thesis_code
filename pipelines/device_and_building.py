@@ -75,8 +75,8 @@ class Building:
                 appliances.append({
                     "original_name": device.device_name.capitalize(),
                     "type": device.device_name,
-                    "instance": 1,  # Default instance for simplicity
-                    "meters": [index],
+                    "instance": 1 +sum((1 for appl in appliances if appl["type"]==device.device_name)),  # Default instance for simplicity
+                    "meters": [index+1],
                 })
     
         # Construct final YAML structure

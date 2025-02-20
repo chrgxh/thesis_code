@@ -5,6 +5,7 @@ import os
 from buildings_json_handler import load_buildings_from_json
 from common import *
 
+#probably not necessary, is not used
 def extract_house_list()->List[Building]:
     """
     Gets a list of buildings by querying the database.

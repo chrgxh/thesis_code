@@ -8,6 +8,7 @@ from query_db_access_api import query_db_access_api
 from transformations import *
 from common import *
 from buildings_json_handler import yield_home_map_and_last_updated, update_building_last_updated
+from get_metadata import get_device_metadata
 
 # Example SQL query to test the database connection
 query_payload = {
@@ -37,9 +38,6 @@ def run_pipeline():
     
     count=1
     for home_id, last_updated, device_map in yield_home_map_and_last_updated():
-
-        if count>1:
-            break
 
         logger.info(f"Retrieving data batch with the following details.")
         logger.info(f"Home id: {home_id}")
@@ -82,6 +80,7 @@ def run_pipeline():
             updated_at:datetime=df.iloc[-1]['timestamp'].to_pydatetime()
             update_building_last_updated(home_id,updated_at.isoformat())
             logger.info("Batch processing completed.")
+        logger.info(f"Data retrieval for home: {home_id} completed.")
         count+=1
 
 if __name__ == '__main__':

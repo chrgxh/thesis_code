@@ -1,7 +1,7 @@
 [
   {
     "home_id": 36,
-    "last_updated": "",
+    "last_updated": "2024-02-28T23:59:35+00:00",
     "active_in_pipeline": true,
     "devices": [
       {
@@ -41,7 +41,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -139,7 +139,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -150,7 +150,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -161,7 +161,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -245,7 +245,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -328,7 +328,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "computer"
       },
       {
@@ -339,7 +339,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -441,7 +441,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -452,7 +452,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -485,7 +485,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -536,7 +536,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -645,7 +645,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -696,7 +696,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -755,7 +755,7 @@
   {
     "home_id": 197,
     "last_updated": "",
-    "active_in_pipeline": true,
+    "active_in_pipeline": false,
     "devices": [
       {
         "device_meter_id": "domxplug-283B9D",
@@ -787,7 +787,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -987,7 +987,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1026,9 +1026,9 @@
         "from": "30-03-23",
         "to": "",
         "time_interval": "",
-        "is_meter": true,
+        "is_meter": false,
         "active_in_pipeline": true,
-        "appliance_name": ""
+        "appliance_name": "ev-charger"
       },
       {
         "device_meter_id": "shellyplug-s-F1BA46",
@@ -1100,7 +1100,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1162,7 +1162,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1202,7 +1202,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "freezer"
       },
       {
@@ -1224,7 +1224,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "unknown"
       },
       {
@@ -1439,7 +1439,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1530,7 +1530,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1581,7 +1581,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "unknown"
       },
       {
@@ -1592,7 +1592,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1708,7 +1708,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1719,7 +1719,7 @@
         "to": "",
         "time_interval": "",
         "is_meter": false,
-        "active_in_pipeline": true,
+        "active_in_pipeline": false,
         "appliance_name": "air conditioner"
       },
       {
@@ -1738,7 +1738,7 @@
   {
     "home_id": 292,
     "last_updated": "",
-    "active_in_pipeline": true,
+    "active_in_pipeline": false,
     "devices": [
       {
         "device_meter_id": "shellyplug-s-7C87CEB4A329",

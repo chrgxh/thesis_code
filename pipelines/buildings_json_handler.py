@@ -42,6 +42,8 @@ def yield_home_map_and_last_updated():
         for d in devices:
             if d is meter_device:
                 continue  # already assigned index=0
+            if not d.get("active_in_pipeline", False):
+                continue  # not active device
             device_map[d["device_meter_id"]] = next_index
             next_index += 1
 
