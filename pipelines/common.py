@@ -8,3 +8,6 @@ BASE_URL = "http://dedalus.epu.ntua.gr:8080/"  # Change this if the app runs els
 
 # Endpoint for querying the database
 QUERY_ENDPOINT = f"{BASE_URL}/query"
+
+# Maximum number of concurrent processes
+MAX_PROCESSES = 3  
