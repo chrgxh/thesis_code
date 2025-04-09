@@ -6,7 +6,7 @@ from common import *
 
 def yield_home_map_and_last_updated():
     """
-    Yields (last_updated, device_map) for each home in the given JSON config file.
+    Yields (home_id, last_updated, device_map) for each home in the given JSON config file.
     
     device_map is a dict of {device_id: index}, where:
       - The first meter device (is_meter == True) is always assigned index 0.
@@ -47,7 +47,7 @@ def yield_home_map_and_last_updated():
             device_map[d["device_meter_id"]] = next_index
             next_index += 1
 
-        # Yield a tuple of (last_updated, device_map)
+        # Yield a tuple of (home_id,last_updated, device_map)
         yield home_id,last_updated, device_map
 
 

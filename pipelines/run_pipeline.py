@@ -11,7 +11,12 @@ from common import *
 from buildings_json_handler import yield_home_map_and_last_updated, update_building_last_updated
 from get_metadata import get_device_metadata
 
-def get_data_for_device_in_period(devices: str, start_date: datetime, end_date: datetime) -> pd.DataFrame:
+def init_worker_logger():
+    # You could configure sinks, level, etc. here in the child process
+    logger.add(f"worker_{os.getpid()}.log")
+    return logger
+
+def get_data_for_device_in_period(devices: str, start_date: datetime, end_date: datetime,check_for_data:bool=False) -> pd.DataFrame:
     start_str = start_date.isoformat()
     end_str = end_date.isoformat()
 
@@ -23,28 +28,54 @@ def get_data_for_device_in_period(devices: str, start_date: datetime, end_date: 
           AND "timestamp" < '{end_str}'
         ORDER BY "timestamp" ASC;
     """
+
+    if check_for_data:
+        query = f"""
+        SELECT device_id , timestamp , power_data , phase
+        FROM device_measurements_30
+        WHERE device_id IN ({devices})
+          AND "timestamp" >= '{start_str}'
+          AND "timestamp" < '{end_str}'
+        ORDER BY "timestamp" ASC
+        LIMIT 1;
+    """
+
     return query_db_access_api({"query": query})
+
+def need_update_building(home_id: str, start_date: str, devices_str: str, tzinfo)->bool:
+    end_date=datetime.now(tzinfo)
+    df = get_data_for_device_in_period(devices_str, start_date, end_date,True)
+    if df.empty:
+        logger.warning(f"No data found for {home_id} between {start_date} and {end_date}.")
+        return False
+    else:
+        return True
 
 def process_building(file_count: int, home_id: str, last_updated: str, device_map: str, 
                      relative_time_delta: relativedelta, default_start_date: datetime, tzinfo):
     
-    logger.info(f"Starting processing for home: {home_id} (File {file_count})")
+    local_logger = init_worker_logger()
+    local_logger.info(f"Starting processing for home: {home_id} (File {file_count})")
 
     devices_str = ",".join(f"'{key}'" for key in device_map.keys())
 
     start_date = datetime.fromisoformat(last_updated) + timedelta(seconds=1) if last_updated else default_start_date
+    
+    if not need_update_building(home_id,start_date,devices_str,tzinfo):
+        local_logger.info(f"Home: {home_id} is up to date.")
+        return
 
     while start_date <= datetime.now(tzinfo):
         end_date = start_date + relative_time_delta
-        logger.info(f"Querying data from {start_date} to {end_date} for home: {home_id}")
+        local_logger.info(f"Querying data from {start_date} to {end_date} for home: {home_id}")
 
         df = get_data_for_device_in_period(devices_str, start_date, end_date)
         if df.empty:
-            logger.warning(f"No data found for {home_id} between {start_date} and {end_date}.")
+            local_logger.warning(f"No data found for {home_id} between {start_date} and {end_date}.")
             start_date = end_date
             continue
         
-        logger.info(f"Retrieved {len(df)} rows for home: {home_id}")
+        local_logger.info(f"Retrieved {len(df)} rows for home: {home_id}")
 
         df = apply_transformations(
             df,
@@ -65,15 +96,16 @@ def process_building(file_count: int, home_id: str, last_updated: str, device_ma
         updated_at: datetime = df.iloc[-1]['timestamp'].to_pydatetime()
         update_building_last_updated(home_id, updated_at.isoformat())
 
-        logger.info(f"Finished processing batch for home: {home_id}")
+        local_logger.info(f"Finished processing batch for home: {home_id}")
         start_date = end_date  # Move to next batch
 
-    logger.info(f"Completed processing for home: {home_id}")
+    local_logger.info(f"Completed processing for home: {home_id}")
 
 def run_pipeline():
     utc = pytz.UTC
     default_start_date = datetime(2021, 1, 1, 0, 0, 0, tzinfo=utc)
-    relative_time_delta = relativedelta(months=1)
+    # relative_time_delta = relativedelta(months=1)
+    relative_time_delta = relativedelta(days=6)
 
     # Collect all buildings to process
     home_data = list(yield_home_map_and_last_updated())

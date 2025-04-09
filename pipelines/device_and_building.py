@@ -63,21 +63,31 @@ class Building:
     def get_device_list_as_string(self):
         return ",".join([f"'{device.device_id}'" for device in self.device_list])
 
+    def get_ordered_device_list(self):
+        """Meters are places in the first positions in the list"""
+        
+        return sorted(self.device_list,key= lambda device:not device.is_meter())
+
     def generate_building_yaml(self, building_no: int, file_path: str):
         # Map devices to elec_meters and appliances
         elec_meters = CommentedMap()
         appliances = []
 
-        for index, device in enumerate(self.device_list, start=1):
+        appl_count=0
+        proper_device_list=self.get_ordered_device_list()
+        for index, device in enumerate(proper_device_list, start=1):
+            appl_count+=1
             elec_meters[index] = device.get_meter_device()
             if not device.is_meter():
                 # Add to appliances
                 appliances.append({
                     "original_name": device.device_name.capitalize(),
                     "type": device.device_name,
-                    "instance": 1 +sum((1 for appl in appliances if appl["type"]==device.device_name)),  # Default instance for simplicity
-                    "meters": [index+1],
+                    "instance": 1 +sum((1 for appl in appliances if appl["type"]==device.device_name)),
+                    "meters": [appl_count+1],
                 })
+            else:
+                appl_count-=1
     
         # Construct final YAML structure
         yaml_data = CommentedMap([
