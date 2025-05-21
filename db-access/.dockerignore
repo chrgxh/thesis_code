@@ -3,7 +3,10 @@
 
 # Allow only these specific files
 !db_access.py
+!csv_loader.py
 !requirements.txt
+!heron_utils/
+!heron_utils/** 
 
 # Ignore hidden/system files
 .dockerignore

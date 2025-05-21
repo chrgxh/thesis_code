@@ -22,3 +22,14 @@ out_metadata.csv
 metadata/
 
 *.h5
+
+#notebooks
+*.ipynb
+
+#logs
+*.log
+*.log.*
+
+.env
+
+*.csv

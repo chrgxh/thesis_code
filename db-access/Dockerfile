@@ -16,6 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy your application code into the container
 COPY db_access.py db_access.py
+COPY csv_loader.py .
+COPY heron_utils/ heron_utils/
+
+# Create the logs directory
+RUN mkdir -p /app/logs
 
 # Expose the Flask port
 EXPOSE 5000

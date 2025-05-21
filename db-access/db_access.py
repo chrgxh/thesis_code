@@ -2,56 +2,102 @@ from flask import Flask, request, jsonify
 import psycopg2
 import os
 
+from heron_utils.heron_api import HeronApi
+from heron_utils.query_heron import _get_device_measurement, heron_device_history
+from csv_loader import load_csv_stream
+
 app = Flask(__name__)
 
-# Database connection details from environment variables
-DB_HOST = os.getenv('DB_HOST', 'localhost')  # Default to localhost
-DB_PORT = os.getenv('DB_PORT', '5432')      # Default to PostgreSQL default port
-DB_NAME = os.getenv('DB_NAME', 'test_db')   # Default to 'test_db'
-DB_USER = os.getenv('DB_USER', 'user')      # Default to 'user'
-DB_PASSWORD = os.getenv('DB_PASSWORD', 'password')  # Default to 'password'
+# —— Global singleton ——
+# This runs once when each Gunicorn worker imports this module
+heron_api = HeronApi()
+
+# Database config from env
+DB_HOST     = os.getenv('DB_HOST', 'localhost')
+DB_PORT     = os.getenv('DB_PORT', '5432')
+DB_NAME     = os.getenv('DB_NAME', 'test_db')
+DB_USER     = os.getenv('DB_USER', 'user')
+DB_PASSWORD = os.getenv('DB_PASSWORD', 'password')
+
+DB_PARAMS = {
+    "host":     DB_HOST,
+    "port":     int(DB_PORT),
+    "database": DB_NAME,
+    "user":     DB_USER,
+    "password": DB_PASSWORD,
+}
 
 @app.route('/')
 def index():
-    return "Welcome to the Flask API! Use the `/query` endpoint to send database queries."
+    return "Welcome! POST to /query or /query_heron."
 
 @app.route('/query', methods=['POST'])
 def run_query():
-    query = request.json.get('query')  # Get the query from the request
-    conn=None
-    cursor=None
+    query = request.json.get('query')
     try:
-        # Connect to the database
-        conn = psycopg2.connect(
-            host=DB_HOST,
-            port=DB_PORT,
-            database=DB_NAME,
-            user=DB_USER,
-            password=DB_PASSWORD
-        )
-        cursor = conn.cursor()
-
-        # Execute the query
-        cursor.execute(query)
-        columns = [desc[0] for desc in cursor.description]  # Get column names
-        rows = cursor.fetchall()  # Get all results
-
-        # Format the results as a list of dictionaries
-        result = [dict(zip(columns, row)) for row in rows]
-
-        conn.close()
-        return jsonify({'success': True, 'data': result})  # Return JSON response
+        conn = psycopg2.connect(host=DB_HOST, port=DB_PORT,
+                                database=DB_NAME,
+                                user=DB_USER, password=DB_PASSWORD)
+        with conn, conn.cursor() as cur:
+            cur.execute(query)
+            cols = [c[0] for c in cur.description]
+            rows = cur.fetchall()
+        return jsonify({'success': True,
+                        'data': [dict(zip(cols, r)) for r in rows]})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
-    finally:
-        if cursor:
-            cursor.close()
-        if conn is not None:
-            conn.close()
 
-if __name__ == '__main__':
-    # Read application host and port from environment variables
-    app_host = os.getenv('APP_HOST', '0.0.0.0')  # Default to 0.0.0.0
-    app_port = int(os.getenv('APP_PORT', 5000))  # Default to 5000
+@app.route('/query_heron', methods=['POST'])
+def query_heron():
+    payload    = request.get_json() or {}
+    device_id  = payload.get('device_id')
+    start_date = payload.get('start_date')
+    end_date   = payload.get('end_date')
 
-    app.run(host=app_host, port=app_port)
+    if not all([device_id, start_date, end_date]):
+        return jsonify({
+            'success': False,
+            'error': 'device_id, start_date and end_date are required'
+        }), 400
+
+    try:
+        data = _get_device_measurement(
+           heron_api_instance=heron_api,
+           device_id=device_id,
+           time_from_nano=start_date,
+           time_to_nano=end_date
+        )
+        return jsonify({'success': True, 'data': data})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 400
+
+@app.route('/upload_csv', methods=['POST'])
+def upload_csv():
+    """
+    Expects multipart/form-data with a file field named 'file'.
+    Wraps the binary stream in TextIOWrapper so copy_from() sees text.
+    """
+    f = request.files.get('file')
+    if not f:
+        return jsonify(success=False, error="No file part"), 400
+
+    # Wrap the underlying binary stream as a text stream
+    text_stream = io.TextIOWrapper(f.stream, encoding='utf-8')
+    
+    # Skip header line
+    header = text_stream.readline()
+    if not header:
+        return jsonify(success=False, error="Empty file"), 400
+
+    try:
+        # Bulk-load into your table
+        load_csv_stream(
+            stream=text_stream,
+            table_name="device_measurements_30",
+            db_params=DB_PARAMS
+        )
+        return jsonify(success=True), 200
+
+    except Exception as e:
+        app.logger.exception("upload_csv failed")
+        return jsonify(success=False, error=str(e)), 500
