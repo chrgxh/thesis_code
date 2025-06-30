@@ -33,3 +33,5 @@ metadata/
 .env
 
 *.csv
+
+.DS_Store
