@@ -10,7 +10,9 @@ import multiprocessing
 from tqdm import tqdm
 import requests
 import io
+import sys
 from heron_manager import get_device_info, TIME_FORMAT, get_heron_device_data, get_nano_time_from_time_string
+from processing import flatten_payload_to_csv_buffer, preview_csv_buffer
 from tenacity import (
     retry,
     stop_after_attempt,
@@ -19,6 +21,9 @@ from tenacity import (
     retry_if_exception_type,
     RetryCallState
 )
+
+# This will show logs in the terminal (stdout)
+logger.add(sink=sys.stdout, level="INFO")
 
 def loguru_before_sleep(retry_state: RetryCallState) -> None:
     """
@@ -70,28 +75,28 @@ def get_device_period_data(device_id:str,window_start:datetime,window_end:dateti
     end_time_ns=get_nano_time_from_time_string(end_time)
     return get_heron_device_data(device_id,start_time_ns,end_time_ns)
 
-def create_device_period_csv_buffer(data:dict):
-    pass
+def create_device_period_csv_buffer(data:dict,device_id:str):
+    buffer=flatten_payload_to_csv_buffer(data,device_id)
+    preview_csv_buffer(buffer)
+    return buffer
 
 def process_device_period(device_id:str,window_start:datetime,window_end:datetime):
     try:
-        # Simulate data processing
-        processed_data = {
-            "device_id": device_id,
-            "from_date": month_start.isoformat(),
-            "to_date": month_end.isoformat(),
-            "metrics": {
-                "total_energy": 123.45,
-                "peak_usage": 10.2
-            }
-        }
+        logger.info(f"Downloading data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+        data=get_device_period_data(device_id,window_start,window_end)
 
-        # POST to API
-        res = requests.post(f"http://localhost:8000/api/insert", json=processed_data)
-        if res.status_code == 200:
-            return f"✓ {device_id} {window_start.strftime(TIME_FORMAT)}"
-        else:
-            return f"✗ {device_id} {window_end.strftime(TIME_FORMAT)} ERR {res.status_code}"
+        if not data:
+            logger.warning("No data found for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+            return
+        
+        logger.info(f"Processing data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+        buffer=create_device_period_csv_buffer(data,device_id)
+
+        logger.info(f"Uploading data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+        post_csv_buffer(buffer)
+
+        logger.info(f"Successfully uploaded data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+
     except Exception as e:
         return f"✗ {device_id} {window_start.strftime(TIME_FORMAT)} EXC: {e}"
 
@@ -109,16 +114,17 @@ def run_pipeline():
         window_start = current
         window_end = current + relative_delta
 
-        print(f"\n📅 Processing window: {window_start.isoformat()} → {window_end.isoformat()}")
+        logger.info(f"\n Processing window: {window_start.isoformat()} → {window_end.isoformat()}")
 
         tasks = [(device, window_start, window_end) for device in devices]
 
         # Parallel processing for this time window
         with multiprocessing.Pool(processes=num_processes) as pool:
-            results = list(tqdm(pool.imap_unordered(process_device_period, tasks), total=len(tasks)))
+            results = list(tqdm(pool.starmap(process_device_period, tasks), total=len(tasks)))
+
 
         for r in results:
-            print(r)
+            logger.info(r)
 
         # Update last_updated after all devices for the window are done
         update_last_updated(new_dt=window_end)

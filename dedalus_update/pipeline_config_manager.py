@@ -1,7 +1,8 @@
 import yaml
-from datetime import datetime
+from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
 from typing import Tuple
+from heron_manager import TIME_FORMAT
 
 last_update_file_path="pipeline_config.yaml"
 
@@ -45,7 +46,7 @@ def read_config_values(config_path: str = "pipeline_config.yaml") -> Tuple[datet
     with open(config_path) as f:
         config = yaml.safe_load(f)
 
-    last_updated: datetime = datetime.strptime(config["last_updated"], "%Y-%m-%dT%H:%M:%S.%fZ")
+    last_updated: datetime = datetime.strptime(config["last_updated"], TIME_FORMAT).replace(tzinfo=timezone.utc)
     num_processes: int = int(config["num_processes"])
     relative_delta: relativedelta = relativedelta(days=int(config["relative_delta"]))
 
