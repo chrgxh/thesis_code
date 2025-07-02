@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import psycopg2
 import os
+import io
 
 from heron_utils.heron_api import HeronApi
 from heron_utils.query_heron import _get_device_measurement, heron_device_history
@@ -73,29 +74,24 @@ def query_heron():
 
 @app.route('/upload_csv', methods=['POST'])
 def upload_csv():
-    """
-    Expects multipart/form-data with a file field named 'file'.
-    Wraps the binary stream in TextIOWrapper so copy_from() sees text.
-    """
     f = request.files.get('file')
     if not f:
         return jsonify(success=False, error="No file part"), 400
 
-    # Wrap the underlying binary stream as a text stream
-    text_stream = io.TextIOWrapper(f.stream, encoding='utf-8')
-    
-    # Skip header line
-    header = text_stream.readline()
-    if not header:
-        return jsonify(success=False, error="Empty file"), 400
-
     try:
-        # Bulk-load into your table
+        # Read and decode entire content
+        content = f.read().decode('utf-8')
+
+        # Pass full content (with header) as a StringIO stream
+        text_stream = io.StringIO(content)
+
+        # Let load_csv_stream handle the header and data
         load_csv_stream(
             stream=text_stream,
             table_name="device_measurements_30",
             db_params=DB_PARAMS
         )
+
         return jsonify(success=True), 200
 
     except Exception as e:
