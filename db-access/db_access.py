@@ -2,16 +2,9 @@ from flask import Flask, request, jsonify
 import psycopg2
 import os
 import io
-
-from heron_utils.heron_api import HeronApi
-from heron_utils.query_heron import _get_device_measurement, heron_device_history
 from csv_loader import load_csv_stream
 
 app = Flask(__name__)
-
-# —— Global singleton ——
-# This runs once when each Gunicorn worker imports this module
-heron_api = HeronApi()
 
 # Database config from env
 DB_HOST     = os.getenv('DB_HOST', 'localhost')
@@ -45,30 +38,6 @@ def run_query():
             rows = cur.fetchall()
         return jsonify({'success': True,
                         'data': [dict(zip(cols, r)) for r in rows]})
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)}), 400
-
-@app.route('/query_heron', methods=['POST'])
-def query_heron():
-    payload    = request.get_json() or {}
-    device_id  = payload.get('device_id')
-    start_date = payload.get('start_date')
-    end_date   = payload.get('end_date')
-
-    if not all([device_id, start_date, end_date]):
-        return jsonify({
-            'success': False,
-            'error': 'device_id, start_date and end_date are required'
-        }), 400
-
-    try:
-        data = _get_device_measurement(
-           heron_api_instance=heron_api,
-           device_id=device_id,
-           time_from_nano=start_date,
-           time_to_nano=end_date
-        )
-        return jsonify({'success': True, 'data': data})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 400
 

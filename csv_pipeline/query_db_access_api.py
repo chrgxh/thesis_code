@@ -55,15 +55,12 @@ def query_db_access_api(query_payload: str) -> pd.DataFrame:
     return pd.DataFrame(json_data["data"])
 
 if __name__ == '__main__':
-    devices="'shellyplug-s-7C87CEBA9A48','domxplug-286BE0','domxem3-349454719423'"
     query = f"""
-        SELECT device_id , timestamp , power_data , phase
+        SELECT *
         FROM device_measurements_30
-        WHERE device_id IN ({devices})
-          AND "timestamp" >= '2024-02-06 13:42:04+00:00'
-          AND "timestamp" < '2024-02-06 13:42:06+00:00'
-        ORDER BY "timestamp" ASC;
+        LIMIT 5;
     """
+
     query_payload = {"query":query}
     df=query_db_access_api(query_payload)
     logger.info(df.head())
