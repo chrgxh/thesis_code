@@ -1,7 +1,5 @@
 from datetime import datetime, timedelta
-import json
 import time
-import psycopg2
 from heron_utils.settings import HISTORY
 from heron_utils.heron_api import HeronApi
 

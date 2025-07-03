@@ -1,0 +1,37 @@
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Editor and IDE files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+.vscode/
+.idea/
+
+# Git and version control
+.git/
+.gitignore
+
+# Environment and secrets
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data and state files
+state/*.csv
+state/*.log
+state/*.tmp
+
+# Notebooks (if unused in container)
+*.ipynb
+
+# Docker-related
+Dockerfile~
+docker-compose.yml~

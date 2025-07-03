@@ -1,8 +1,7 @@
 import pandas as pd
-import pytz
 import os
 import multiprocessing as mp
-from loguru import logger
+from logger_config import logger
 from datetime import datetime, timedelta, timezone
 from dateutil.relativedelta import relativedelta
 from pipeline_config_manager import read_config_values,update_last_updated
@@ -21,9 +20,6 @@ from tenacity import (
     retry_if_exception_type,
     RetryCallState
 )
-
-# This will show logs in the terminal (stdout)
-logger.add(sink=sys.stdout, level="INFO")
 
 def loguru_before_sleep(retry_state: RetryCallState) -> None:
     """
@@ -53,7 +49,7 @@ def init_worker_logger():
 def post_csv_buffer(buffer):
     buffer.seek(0)
     binary_buf = io.BytesIO(buffer.getvalue().encode("utf-8"))
-    query_url = "http://localhost:8080/upload_csv"
+    query_url = f"{os.getenv('API_URL')}/upload_csv"
     resp = requests.post(query_url, files={
         # the tuple is: (filename, fileobj, content_type)
         "file": ("readings.csv", buffer, "text/csv")

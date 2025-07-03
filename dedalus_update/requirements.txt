@@ -1,0 +1,12 @@
+pyyaml
+python-dotenv
+pandas
+requests
+pandas
+requests
+python-dateutil
+pytz
+loguru
+tenacity
+python-dotenv
+pyyaml

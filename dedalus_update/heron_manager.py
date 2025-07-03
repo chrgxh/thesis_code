@@ -1,9 +1,8 @@
 from heron_utils.query_heron import _get_device_measurement, _init_heron_api
 from heron_utils.settings import HISTORY
-from loguru import logger
+from logger_config import logger
 from datetime import datetime, timezone
 from typing import List, Tuple
-
 
 heron_api = _init_heron_api()
 

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  pipeline:
+    build: .
+    image: dedalus-update
+    container_name: dedalus-update
+    env_file:
+      - .env
+    volumes:
+      - ./state:/app/state
+      - ./pipeline_config.yaml:/app/pipeline_config.yaml
+    restart: on-failure

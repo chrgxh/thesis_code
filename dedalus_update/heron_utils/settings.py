@@ -1,14 +1,3 @@
-from configparser import ConfigParser
-from datetime import datetime, timedelta
-
-
-#def read_config_file():
-#    config_object = ConfigParser()
-#    config_object.read("HERON_ETLs/config.ini")
-#    return config_object
-
-#onfig_object = read_config_file()
-
 # HERON API SETTINGS (Directly included)
 HERON_START_DATE = 1623828783  # 2021-06-21T07:32:56.409Z
 HERON_NANO_MUL = 1000000000  # In nanoseconds
