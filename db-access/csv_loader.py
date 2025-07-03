@@ -23,6 +23,7 @@ def load_csv_stream(stream, table_name, db_params):
     columns = [col.strip() for col in header_line.strip().split(',')]
     column_list = ', '.join(columns)
     temp_table = f"{table_name}_temp"
+    dedup_table = f"{temp_table}_dedup"
 
     # 3. Define conflict columns (adjust if needed)
     conflict_cols = ['timestamp', 'device_id', 'phase']
@@ -37,9 +38,14 @@ def load_csv_stream(stream, table_name, db_params):
     try:
         with conn, conn.cursor() as cur:
             # Create temp table
+            cur.execute(f"DROP TABLE IF EXISTS {temp_table};")
             cur.execute(f"""
-                CREATE TEMP TABLE {temp_table} (LIKE {table_name} INCLUDING ALL);
+                CREATE TEMP TABLE {temp_table} AS
+                SELECT {column_list}
+                FROM {table_name}
+                LIMIT 0;
             """)
+
 
             # Load data into temp table
             cur.copy_from(
@@ -49,11 +55,24 @@ def load_csv_stream(stream, table_name, db_params):
                 columns=tuple(columns)
             )
 
+            # Deduplicate rows from source by averaging power
+            cur.execute(f"DROP TABLE IF EXISTS {dedup_table};")
+            cur.execute(f"""
+                CREATE TEMP TABLE {dedup_table} AS
+                SELECT 
+                    timestamp,
+                    device_id,
+                    phase,
+                    AVG(power_data) AS power_data
+                FROM {temp_table}
+                GROUP BY timestamp, device_id, phase;
+            """)
+
             # Upsert from temp into real table
             cur.execute(f"""
                 INSERT INTO {table_name} ({column_list})
                 SELECT {column_list}
-                FROM {temp_table}
+                FROM {dedup_table}
                 ON CONFLICT ({conflict_clause}) DO UPDATE SET
                 {update_clause};
             """)

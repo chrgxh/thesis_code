@@ -7,12 +7,12 @@ from datetime import datetime, timedelta, timezone
 from dateutil.relativedelta import relativedelta
 from pipeline_config_manager import read_config_values,update_last_updated
 import multiprocessing
-from tqdm import tqdm
 import requests
 import io
 import sys
 from heron_manager import get_device_info, TIME_FORMAT, get_heron_device_data, get_nano_time_from_time_string
 from processing import flatten_payload_to_csv_buffer, preview_csv_buffer
+from json import JSONDecodeError
 from tenacity import (
     retry,
     stop_after_attempt,
@@ -77,28 +77,45 @@ def get_device_period_data(device_id:str,window_start:datetime,window_end:dateti
 
 def create_device_period_csv_buffer(data:dict,device_id:str):
     buffer=flatten_payload_to_csv_buffer(data,device_id)
-    preview_csv_buffer(buffer)
+    logger.info(preview_csv_buffer(buffer).to_string())
     return buffer
 
-def process_device_period(device_id:str,window_start:datetime,window_end:datetime):
+def process_device_period(device_id: str, window_start: datetime, window_end: datetime):
     try:
         logger.info(f"Downloading data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
-        data=get_device_period_data(device_id,window_start,window_end)
+        
+        try:
+            data = get_device_period_data(device_id, window_start, window_end)
+        except JSONDecodeError as e:
+            logger.warning(f"Initial fetch failed with exception: {e}. Data might be too large for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}. Attempting 5-part split fallback...")
+            delta = (window_end - window_start) / 5
+            data = []
+            for i in range(5):
+                part_start = window_start + i * delta
+                part_end = window_start + (i + 1) * delta
+                try:
+                    part_data = get_device_period_data(device_id, part_start, part_end)
+                    if part_data:
+                        data.extend(part_data)
+                except Exception as split_e:
+                    logger.warning(f"Split fetch failed for part {i+1}/5: {split_e}")
 
         if not data:
-            logger.warning("No data found for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+            logger.warning(f"No data found for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
             return
-        
+
         logger.info(f"Processing data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
-        buffer=create_device_period_csv_buffer(data,device_id)
+        buffer = create_device_period_csv_buffer(data, device_id)
 
         logger.info(f"Uploading data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
         post_csv_buffer(buffer)
 
-        logger.info(f"Successfully uploaded data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
+        logger.success(f"Successfully uploaded data for device: {device_id} in window: {window_start.isoformat()} → {window_end.isoformat()}")
 
     except Exception as e:
-        return f"✗ {device_id} {window_start.strftime(TIME_FORMAT)} EXC: {e}"
+        logger.error(f"✗ {device_id} {window_start.strftime(TIME_FORMAT)} EXC: {e}")
+        raise e
+
 
 def run_pipeline():
     last_updated, num_processes, relative_delta = read_config_values()
@@ -116,17 +133,18 @@ def run_pipeline():
 
         logger.info(f"\n Processing window: {window_start.isoformat()} → {window_end.isoformat()}")
 
-        tasks = [(device, window_start, window_end) for device in devices]
+        tasks = [(device[0], window_start, window_end) for device in devices if device[1] <= window_start ]
 
         # Parallel processing for this time window
         with multiprocessing.Pool(processes=num_processes) as pool:
-            results = list(tqdm(pool.starmap(process_device_period, tasks), total=len(tasks)))
+            results = pool.starmap_async(process_device_period, tasks).get()  # raises on first error
 
 
-        for r in results:
-            logger.info(r)
+        # for r in results:
+        #     logger.info(r)
 
         # Update last_updated after all devices for the window are done
+        logger.success(f"Successfully fetched data up to {window_end.isoformat()}")
         update_last_updated(new_dt=window_end)
 
         current = window_end

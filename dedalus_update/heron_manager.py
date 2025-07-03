@@ -1,7 +1,9 @@
 from heron_utils.query_heron import _get_device_measurement, _init_heron_api
 from heron_utils.settings import HISTORY
 from loguru import logger
-from datetime import datetime
+from datetime import datetime, timezone
+from typing import List, Tuple
+
 
 heron_api = _init_heron_api()
 
@@ -21,8 +23,8 @@ def get_heron_device_data(device_id: str, start_time: str, end_time: str) -> dic
             time_to_nano=end_time
         )
 
-        if resp_dict is None:
-            logger.error("API returned None (no response)")
+        if not resp_dict:
+            logger.warning("API returned None (no response)")
             return None
 
         if "power" in resp_dict:
@@ -42,8 +44,11 @@ def get_heron_device_data(device_id: str, start_time: str, end_time: str) -> dic
 
     except Exception as e:
         logger.error(f"Unexpected failure in get_heron_device_data: {str(e)}")
-        return None
+        raise e
 
 
-def get_device_info():
-    return [(device["deviceid"], device["registeredat"]) for device in HISTORY]
+def get_device_info() -> List[Tuple[str, datetime]]:
+    return [
+        (device["deviceid"], datetime.strptime(device["registeredat"], TIME_FORMAT).replace(tzinfo=timezone.utc))
+        for device in HISTORY
+    ]

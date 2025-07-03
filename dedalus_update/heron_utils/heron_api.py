@@ -59,8 +59,8 @@ class HeronApi(object):
             url=f"https://{self.HERON_DOMAIN}/api/v1/devices",
             headers=headers
         )
-        print("Devices response:")
-        print(response.content)
+        # print("Devices response:")
+        # print(response.content)
         return response
     
     # Get Device Details
@@ -73,8 +73,8 @@ class HeronApi(object):
             url=f"https://{self.HERON_DOMAIN}/api/v1/devices/{device_id}",
             headers=headers
         )
-        print("Device params response:")
-        print(response.content)
+        # print("Device params response:")
+        # print(response.content)
         return response
     
     # Get Device Measurements
@@ -88,8 +88,8 @@ class HeronApi(object):
             headers=headers,
             params={'time_from': time_from, 'time_to': time_to, 'measurement': measurement}
         )
-        print("Device data response:")
-        print(response.content)
+        # print("Device data response:")
+        # print(response.content)
         if response.status_code == 401:  # Unauthorized status code
             # Token expired or invalid, refresh token and retry the request
             self._refresh_token()  # Refresh token
@@ -99,8 +99,8 @@ class HeronApi(object):
                 headers=headers,
                 params={'time_from': time_from, 'time_to': time_to, 'measurement': measurement}
             )
-            print("Retried Device data response:")
-            print(response.content)
+            # print("Retried Device data response:")
+            # print(response.content)
         if response.status_code == 200:
             return response.json()  # Return the JSON data
         else:
