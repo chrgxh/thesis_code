@@ -30,6 +30,7 @@ metadata/
 *.log
 *.log.*
 
+nilmtk-env
 .env
 
 *.csv

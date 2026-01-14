@@ -57,7 +57,7 @@ def query_db_access_api(query_payload: str) -> pd.DataFrame:
 if __name__ == '__main__':
     query = f"""
         SELECT *
-        FROM device_measurements_30
+        FROM device_metadata
         LIMIT 5;
     """
 
