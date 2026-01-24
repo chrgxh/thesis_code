@@ -1,4 +1,3 @@
-# generators_clean.py
 import gc
 import numpy as np
 from dataclasses import dataclass
@@ -18,7 +17,7 @@ class GeneratorConfig:
     appliance_name: str
     window_size: int = 301
     batch_size: int = 32
-    sample_period: int = 6          # <-- BIG SPEED KNOB (try 30 or 60)
+    sample_period: int = 6           
     threshold: float = 50.0         # label ON if appliance_power >= threshold
     shuffle: bool = True
     cache_in_memory: bool = True    # keep df chunks in RAM once loaded
@@ -34,8 +33,8 @@ class _MultiRegionBase(Sequence):
         self.cfg = cfg
         self.half = cfg.window_size // 2
 
-        self._chunks = []   # list of joined DataFrames (mains/appliance)
-        self._indices = []  # list of (chunk_id, center_idx)
+        self._chunks = []   
+        self._indices = []  
 
         self._prepare()
 
@@ -70,7 +69,6 @@ class _MultiRegionBase(Sequence):
             if self.cfg.cache_in_memory:
                 self._chunks.append(df)
             else:
-                # If you ever want stream-from-disk later, you'd store region metadata instead.
                 # Keeping it simple here: cache_in_memory=True is assumed for now.
                 self._chunks.append(df)
 
@@ -81,7 +79,6 @@ class _MultiRegionBase(Sequence):
         if self.cfg.shuffle:
             np.random.shuffle(self._indices)
 
-    # Helpers
     def _get_batch_indices(self, batch_idx: int):
         bs = self.cfg.batch_size
         return self._indices[batch_idx * bs:(batch_idx + 1) * bs]
