@@ -23,7 +23,7 @@ DB_PARAMS = {
 
 @app.route('/')
 def index():
-    return "Welcome! POST to /query or /query_heron."
+    return "Welcome! POST to /query."
 
 @app.route('/query', methods=['POST'])
 def run_query():
