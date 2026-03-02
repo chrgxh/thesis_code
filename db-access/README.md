@@ -1,5 +1,3 @@
-# db-access
-
 `db-access` is a Flask-based API that provides controlled access to the Dedalus PostgreSQL database.  
 It acts as the database access layer for the system, isolating database logic behind an HTTP interface.
 
