@@ -1,10 +1,6 @@
 import pandas as pd
 import numpy as np
-from copy import deepcopy
-from os.path import join, isdir, isfile, exists
-from os import listdir
-import fnmatch
-import re
+from os.path import join, exists
 from sys import stdout
 from nilmtk.utils import get_datastore
 from nilmtk.datastore import Key
@@ -41,18 +37,6 @@ def convert_greek(input_path, metadata_path, output_filename, format='HDF'):
         print(f"Error during YAML to HDF5 conversion: {e}")
 
     store.close()
-    print("Done converting GREEK to HDF5!")
-
-    # Add metadata
-    ##save_yaml_to_datastore('/Users/user/Desktop/DAE-main 2/greek_data/greek/greek/metadata', store)
-
-    # save_yaml_to_datastore(join(get_module_directory(), 
-    #                           'dataset_converters', 
-    #                           'greek', 
-    #                           'metadata'),
-    #                      store)
-    # store.close()
-
     print("Done converting GREEK to HDF5!")
 
 def _convert(input_path, store, tz, sort_index=True):
