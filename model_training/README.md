@@ -40,3 +40,13 @@ These saved models can later be loaded for inference or evaluation.
 ## Dependencies
 
 Python dependencies are listed in `requirements.txt`.
+
+## Example usage
+
+A minimal training example is provided in `example_train.py`.
+
+Run:
+    python example_train.py
+
+Set the dataset path via:
+    export H5_PATH=path/to/dataset.h5
